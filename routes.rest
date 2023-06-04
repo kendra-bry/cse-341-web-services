@@ -1,0 +1,9 @@
+# LOCALHOST
+###
+GET http://localhost:3300/contacts
+###
+GET http://localhost:3300/contacts/647ccbb8813669570a51f2e9
+###
+GET http://localhost:3300/contacts/647ccc41813669570a51f2ea
+###
+GET http://localhost:3300/contacts/647cccb0813669570a51f2eb
