@@ -7,6 +7,31 @@ GET http://localhost:3300/contacts/647ccbb8813669570a51f2e9
 GET http://localhost:3300/contacts/647ccc41813669570a51f2ea
 ###
 GET http://localhost:3300/contacts/647cccb0813669570a51f2eb
+###
+POST http://localhost:3300/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Mickey",
+    "lastName": "Mouse",
+    "email": "mickey@disney.com",
+    "favoriteColor": "red",
+    "birthday": "1928-11-18"
+}
+###
+PUT http://localhost:3300/contacts/648152af11d5e73e10408474 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Donald",
+    "lastName": "Duck",
+    "email": "donald@disney.com",
+    "favoriteColor": "blue",
+    "birthday": "1934-06-09"
+}
+###
+DELETE http://localhost:3300/contacts/648152af11d5e73e10408474 HTTP/1.1
+content-type: application/json
 
 # PRODUCTION
 ###
@@ -17,3 +42,28 @@ GET https://cse-341-l1.onrender.com/contacts/647ccbb8813669570a51f2e9
 GET https://cse-341-l1.onrender.com/contacts/647ccc41813669570a51f2ea
 ###
 GET https://cse-341-l1.onrender.com/contacts/647cccb0813669570a51f2eb
+###
+POST https://cse-341-l1.onrender.com/contacts HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Mickey",
+    "lastName": "Mouse",
+    "email": "mickey@disney.com",
+    "favoriteColor": "red",
+    "birthday": "1928-11-18"
+}
+###
+PUT https://cse-341-l1.onrender.com/contacts/648152af11d5e73e10408474 HTTP/1.1
+content-type: application/json
+
+{
+    "firstName": "Donald",
+    "lastName": "Duck",
+    "email": "donald@disney.com",
+    "favoriteColor": "blue",
+    "birthday": "1934-06-09"
+}
+###
+DELETE https://cse-341-l1.onrender.com/contacts/648152af11d5e73e10408474 HTTP/1.1
+content-type: application/json
