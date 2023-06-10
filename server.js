@@ -1,3 +1,4 @@
+const chalk = require('chalk');
 const express = require('express');
 const bodyParser = require('body-parser');
 const mongodb = require('./db/connect');
@@ -18,6 +19,8 @@ mongodb.initDb((err, db) => {
   if (err) {
     console.log(err);
   } else {
-    app.listen(PORT, () => console.log(`HTTP app now listening on port ${PORT}!`));
+    const url = `http://localhost:${PORT}/contacts`;
+    const link = `\u001b]8;;${url}\u001b\\${url}\u001b]8;;\u001b\\`;
+    app.listen(PORT, () => console.log(`HTTP app now listening on port ${PORT}. ${chalk.blue(link)}`));
   }
 });

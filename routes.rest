@@ -19,7 +19,7 @@ content-type: application/json
     "birthday": "1928-11-18"
 }
 ###
-PUT http://localhost:3300/contacts/648152af11d5e73e10408474 HTTP/1.1
+PUT http://localhost:3300/contacts/64848d8ae627568681614981 HTTP/1.1
 content-type: application/json
 
 {
@@ -30,7 +30,7 @@ content-type: application/json
     "birthday": "1934-06-09"
 }
 ###
-DELETE http://localhost:3300/contacts/648152af11d5e73e10408474 HTTP/1.1
+DELETE http://localhost:3300/contacts/64848d8ae627568681614981 HTTP/1.1
 content-type: application/json
 
 # PRODUCTION
@@ -54,16 +54,16 @@ content-type: application/json
     "birthday": "1928-11-18"
 }
 ###
-PUT https://cse-341-l1.onrender.com/contacts/648152af11d5e73e10408474 HTTP/1.1
+PUT https://cse-341-l1.onrender.com/contacts/64848da71b67a6fe8567c31e HTTP/1.1
 content-type: application/json
 
 {
-    "firstName": "Donald",
+    "firstName": "Daisy",
     "lastName": "Duck",
-    "email": "donald@disney.com",
+    "email": "daisy@disney.com",
     "favoriteColor": "blue",
     "birthday": "1934-06-09"
 }
 ###
-DELETE https://cse-341-l1.onrender.com/contacts/648152af11d5e73e10408474 HTTP/1.1
+DELETE https://cse-341-l1.onrender.com/contacts/64848da71b67a6fe8567c31e HTTP/1.1
 content-type: application/json
