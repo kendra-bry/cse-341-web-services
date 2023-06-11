@@ -6,7 +6,7 @@ const doc = {
     description: 'CSE 341 API',
   },
   host: `localhost:${process.env.PORT}`,
-  schemes: ['http'],
+  schemes: ['http', 'https'],
   consumes: ['application/json'],
   produces: ['application/json'],
   definitions: {
