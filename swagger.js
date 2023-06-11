@@ -5,7 +5,7 @@ const doc = {
     title: 'My API',
     description: 'CSE 341 API',
   },
-  host: `localhost:${process.env.PORT}`,
+  host: process.env.HOST || `localhost:${process.env.PORT}`,
   schemes: ['http', 'https'],
   consumes: ['application/json'],
   produces: ['application/json'],
