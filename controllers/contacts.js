@@ -27,6 +27,14 @@ const getById = async (req, res) => {
 };
 
 const insertContact = async (req, res) => {
+  /*
+    #swagger.requestBody  = {
+      description: 'Add a contact.',
+      in: 'body',
+      required: true,
+      schema: { $ref: '#/definitions/Contact'}
+    }
+  */
   try {
     validateContact(req.body);
     const response = await mongodb.getDb().db().collection('contacts').insertOne(req.body);
@@ -38,6 +46,14 @@ const insertContact = async (req, res) => {
 };
 
 const updateContact = async (req, res) => {
+  /*
+    #swagger.requestBody  = {
+      description: 'Update a contact.',
+      in: 'body',
+      required: true,
+      schema: { $ref: '#/definitions/Contact'}
+    }
+  */
   try {
     validateContact(req.body);
     await mongodb
@@ -51,7 +67,7 @@ const updateContact = async (req, res) => {
         { $set: req.body },
         { upsert: true }
       );
-    res.status(204).send('Ok');
+    res.status(204).send();
   } catch (error) {
     console.log(error);
     res.status(401).send(error);
@@ -65,7 +81,7 @@ const deleteContact = async (req, res) => {
       .db()
       .collection('contacts')
       .deleteOne({ _id: new ObjectId(req.params.id) });
-      res.status(200).send('Ok');
+    res.status(200).send('Ok');
   } catch (error) {
     console.log(error);
     res.status(401).send(error);
