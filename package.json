@@ -4,8 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "start": "node -r dotenv/config server.js",
-    "dev": "nodemon -r dotenv/config server.js",
+    "start": "npm run swagger && node -r dotenv/config server.js",
+    "dev": "npm run swagger && nodemon -r dotenv/config server.js",
     "swagger": "node -r dotenv/config ./swagger.js"
   },
   "keywords": [],
@@ -24,3 +24,4 @@
     "nodemon": "^2.0.22"
   }
 }
+
