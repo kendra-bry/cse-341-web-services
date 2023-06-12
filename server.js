@@ -14,12 +14,12 @@ app
   .use(express.json())
   .use(logger('dev'))
   .use(express.urlencoded({ extended: true }))
+  .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
   .use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Content-Type', 'application/json');
     next();
   })
-  .use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument))
   .use('/', require('./routes'));
 
 mongodb.initDb((err, db) => {
