@@ -2,17 +2,27 @@ const { ObjectId } = require('mongodb');
 const mongodb = require('../db/connect');
 
 const getAllContacts = async (req, res) => {
+  /*
+    #swagger.responses[200] = {
+      schema: [{ $ref: '#/definitions/Contact'}]
+    }
+  */
   try {
     const data = await mongodb.getDb().db().collection('contacts').find();
     let result = await data.toArray();
     res.status(200).json(result);
   } catch (error) {
     console.log(error);
-    res.status(401).send(error);
+    res.status(500).send(error.message);
   }
 };
 
 const getById = async (req, res) => {
+  /*
+    #swagger.responses[200] = {
+      schema: { $ref: '#/definitions/Contact'}
+    }
+  */
   try {
     const data = await mongodb
       .getDb()
@@ -22,7 +32,7 @@ const getById = async (req, res) => {
     res.status(200).json(data);
   } catch (error) {
     console.log(error);
-    res.status(401).send(error);
+    res.status(500).send(error.message);
   }
 };
 
@@ -41,7 +51,7 @@ const insertContact = async (req, res) => {
     res.status(201).send(response);
   } catch (error) {
     console.log(error);
-    res.status(401).send(error);
+    res.status(500).send(error.message);
   }
 };
 
@@ -70,7 +80,7 @@ const updateContact = async (req, res) => {
     res.status(204).send();
   } catch (error) {
     console.log(error);
-    res.status(401).send(error);
+    res.status(500).send(error.message);
   }
 };
 
@@ -84,7 +94,7 @@ const deleteContact = async (req, res) => {
     res.status(200).send('Ok');
   } catch (error) {
     console.log(error);
-    res.status(401).send(error);
+    res.status(500).send(error.message);
   }
 };
 
