@@ -21,6 +21,7 @@ app
   .use('/', require('./routes'));
 
 mongodb.initDb((err, db) => {
+  console.log(swaggerDocument);
   if (err) {
     console.log(err);
   } else {

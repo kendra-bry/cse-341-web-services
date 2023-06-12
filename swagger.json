@@ -8,6 +8,9 @@
   "servers": [
     {
       "url": "http://localhost:3300/"
+    },
+    {
+      "url": "https://localhost:3300/"
     }
   ],
   "paths": {
