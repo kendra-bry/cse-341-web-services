@@ -1,5 +1,6 @@
 const cors = require('cors');
 const chalk = require('chalk');
+const logger = require('morgan');
 const express = require('express');
 const mongodb = require('./db/connect');
 const swaggerUi = require('swagger-ui-express');
@@ -11,6 +12,7 @@ const app = express();
 app
   .use(cors())
   .use(express.json())
+  .use(logger('dev'))
   .use(express.urlencoded({ extended: true }))
   .use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
