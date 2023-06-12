@@ -19,7 +19,6 @@ const doc = {
     },
   },
 };
-console.log({doc});
 const outputFile = './swagger.json';
 const endpointsFiles = ['./server.js'];
 

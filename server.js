@@ -23,12 +23,10 @@ app
   .use('/', require('./routes'));
 
 mongodb.initDb((err, db) => {
-  console.log(swaggerDocument);
   if (err) {
     console.log(err);
   } else {
     let logMessage = `HTTP app now listening on port ${PORT}.`;
-    console.log({ NODE_ENV: process.env.NODE_ENV });
     if (process.env.NODE_ENV === 'DEV') {
       const url = `http://localhost:${PORT}/api-docs`;
       const link = `\u001b]8;;${url}\u001b\\${url}\u001b]8;;\u001b\\`;
