@@ -5,8 +5,8 @@ const doc = {
     title: 'My API',
     description: 'CSE 341 API',
   },
-  host: process.env.HOST || `localhost:${process.env.PORT}`,
-  schemes: ['http', 'https'],
+  host: `localhost:${process.env.PORT}`,
+  schemes: ['http'],
   consumes: ['application/json'],
   produces: ['application/json'],
   definitions: {
@@ -19,6 +19,12 @@ const doc = {
     },
   },
 };
+
+if (process.env.NODE_ENV === 'PROD') {
+  doc.host = process.env.HOST;
+  doc.schemes = ['https'];
+}
+
 const outputFile = './swagger.json';
 const endpointsFiles = ['./server.js'];
 
